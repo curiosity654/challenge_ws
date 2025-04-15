@@ -21,6 +21,7 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
   scripts/nav_to_pose.py
   scripts/set_initial_pose.py
+  scripts/nav_waypoints.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
