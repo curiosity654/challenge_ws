@@ -226,11 +226,12 @@ class WaypointNavigator(Node):
         # 计算到目标的距离
         x = current_pose.pose.position.x
         y = current_pose.pose.position.y
+        yaw = current_pose.pose.orientation.z
         
         # 每5秒输出一次当前位置（减少日志量）
         current_time = self.get_clock().now().to_msg().sec
         if current_time % 5 == 0:
-            self.get_logger().info(f'当前位置: x={x:.2f}, y={y:.2f}，导航到路径点 {self._current_waypoint_index+1}/{len(self._waypoints)}')
+            self.get_logger().info(f'当前位置: x={x:.2f}, y={y:.2f}, yaw={yaw:.2f}，导航到路径点 {self._current_waypoint_index+1}/{len(self._waypoints)}')
 
 
 def main(args=None):
@@ -254,7 +255,7 @@ def main(args=None):
         
         # 定义6个路径点 (x, y, yaw)
         waypoints = [
-            (-1.28, -1.125, -1.57),      # 路径点1
+            (-1.54, -1.2, -1.57),      # 路径点1
             (-0.59, -2.43, 0.25),     # 路径点2
             (-2.90, -1.77, -0.28),     # 路径点3
             (-2.46, -2.7, -1.57),    # 路径点4

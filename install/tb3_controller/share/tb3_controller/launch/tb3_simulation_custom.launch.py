@@ -56,7 +56,7 @@ def generate_launch_description():
     tb3_sim_launch = os.path.join(nav2_bringup_dir, 'launch', 'tb3_simulation_launch.py')
     
     # 设置Nav2参数文件路径 - 使用绝对路径确保正确找到文件
-    nav2_params_path = os.path.join(workspace_dir, 'src', 'nav2', 'nav2_params.yaml')
+    nav2_params_path = os.path.join(workspace_dir, 'src', 'nav2', 'nav2_params_navfn.yaml')
     print(f'Nav2参数文件路径: {nav2_params_path}')
     params_arg = DeclareLaunchArgument(
         'params_file',
